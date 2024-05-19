@@ -15,6 +15,7 @@
 		EFF0B0C12BF7418A00FB8470 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EFF0B0C02BF7418A00FB8470 /* Base */; };
 		EFF0B0CA2BF7485200FB8470 /* MZWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF0B0C92BF7485200FB8470 /* MZWordViewController.swift */; };
 		EFF0B0CC2BF7486400FB8470 /* EmotionDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF0B0CB2BF7486400FB8470 /* EmotionDiaryViewController.swift */; };
+		EFF0B0CD2BF9D02B00FB8470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF0B0BA2BF7418800FB8470 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +143,7 @@
 				EFF0B0BE2BF7418A00FB8470 /* Assets.xcassets in Resources */,
 				EFF0B0C12BF7418A00FB8470 /* Base in Resources */,
 				EFF0B0BC2BF7418800FB8470 /* Base in Resources */,
+				EFF0B0CD2BF9D02B00FB8470 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

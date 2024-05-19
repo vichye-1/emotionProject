@@ -82,17 +82,65 @@ class EmotionDiaryViewController: UIViewController {
     }
     
     private func labelLogic() {
-        let emotions = ["행복해", "좋아해", "사랑해", "화를내", "당황해", "막막해", "곤란해", "우울해", "억울해"]
         let emotionLabels = [label1, label2, label3, label4, label5, label6, label7, label8, label9]
         for index in emotions.indices {
             labelUI(emotions[index], emotionLabels[index])
         }
     }
     
-   
+    // 버튼 눌릴때 로직(숫자 +1)
     @IBAction func happyButtonTapped(_ sender: UIButton) {
-        emotionsDict["행복해"]! += 1
-        label1.text = "행복해 \(emotionsDict["행복해"]!)"
+        let state1 = "행복해"
+        emotionsDict[state1]! += 1
+        label1.text = "\(state1) \(emotionsDict[state1]!)"
     }
     
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        let state2 = "좋아해"
+        emotionsDict[state2]! += 1
+        label2.text = "\(state2) \(emotionsDict[state2]!)"
+    }
+    
+    @IBAction func loveButtonTapped(_ sender: UIButton) {
+        let state3 = "사랑해"
+        emotionsDict[state3]! += 1
+        label3.text = "\(state3) \(emotionsDict[state3]!)"
+    }
+    
+    
+    @IBAction func angryButtonTapped(_ sender: UIButton) {
+        let state4 = "화를내"
+        emotionsDict[state4]! += 1
+        label4.text = "\(state4) \(emotionsDict[state4]!)"
+    }
+    
+    @IBAction func embarrassedButtonTapped(_ sender: UIButton) {
+        let state5 = "당황해"
+        emotionsDict[state5]! += 1
+        label5.text = "\(state5) \(emotionsDict[state5]!)"
+    }
+    
+    @IBAction func hopelessButtonTapped(_ sender: UIButton) {
+        let state6 = "막막해"
+        emotionsDict[state6]! += 1
+        label6.text = "\(state6) \(emotionsDict[state6]!)"
+    }
+    
+    @IBAction func challengingButtonTapped(_ sender: UIButton) {
+        let state7 = "곤란해"
+        emotionsDict[state7]! += 1
+        label7.text = "\(state7) \(emotionsDict[state7]!)"
+    }
+    
+    @IBAction func depressedButtonTapped(_ sender: UIButton) {
+        let state8 = "우울해"
+        emotionsDict[state8]! += 1
+        label8.text = "\(state8) \(emotionsDict[state8]!)"
+    }
+    
+    @IBAction func unfairButtonTapped(_ sender: UIButton) {
+        let state9 = "억울해"
+        emotionsDict[state9]! += 1
+        label9.text = "\(state9) \(emotionsDict[state9]!)"
+    }
 }

@@ -19,6 +19,8 @@ class MZWordViewController: UIViewController {
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var mainLabel: UILabel!
     
+    var words = ["kijul", "그 잡채", "재질", "스불재", "드르륵 칵", "갓생", "비담", "추구미", "복복복", "원영적 사고"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBarUI()
@@ -26,6 +28,11 @@ class MZWordViewController: UIViewController {
         buttonLogics()
         searchWithReturnButton()
 
+    }
+    
+    // 화면 클릭(탭제스쳐 실행)시 키보드 내려가도록
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     // 서치 텍스트 필드
@@ -54,10 +61,6 @@ class MZWordViewController: UIViewController {
     private func buttonLogics() {
         let buttons = [wordButton1, wordButton2, wordButton3, wordButton4]
 
-
-        let words = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-        
-        
         for index in buttons.indices {
             buttonUI(words[index], buttons[index])
         }
@@ -72,25 +75,30 @@ class MZWordViewController: UIViewController {
     ❓ return 버튼 누르면 키보드 사라지게 하는 방법
      해결 방법 - stackoverflow 검색 https://stackoverflow.com/questions/26288124/how-do-i-get-the-return-key-to-perform-the-same-action-as-a-button-press-in-swif
      */
+    
     private func searchWithReturnButton() {
         searchTextField.addTarget(self, action: #selector(searchLogic), for: UIControl.Event.primaryActionTriggered)
     }
     
 
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        
         searchLogic()
     }
     
     
     @objc func searchLogic() {
-        let wordDict: [String : String] = ["1": "이건1", "2": "이건2", "3": "이건3", "4": "이건4", "5": "이건5", "6": "이건6", "7": "이건7", "8": "이건8", "9": "이건9", "10": "이건10"]
+        let wordDict: [String : String] = ["kijul": "'기절'이라는 뜻\nex)너무 웃겨서 kijul(기절)", "그 잡채": "'그 자체'의 언어유희", "재질": "~느낌\n너 완전 아이돌 재질이다 = 너 완전 아이돌 느낌이다", "스불재": "스스로 불러온 재앙의 줄임말", "드르륵 칵": "편의점 야외에 설치된 플라스틱 의자를 지칭하는 단어", "갓생": "'신(GOD) + 인생'이 합쳐진 단어로 '남들보다 열심히 살아가는 모습", "비담": "'비주얼 담당'의 줄임말로 주로 아이돌 멤버 중에서 가장 잘생기거나 예쁜 멤버를 말할 때 사용된다.", "추구미": "'내가 추구하는 이미지'의 줄임말", "복복복": "사랑스럽게 쓰다듬을 때의 의성어\nex) 우리 집 고양이는 너무 귀여워서 하루종일 복복복해주고 싶다.", "원영적 사고": "'오히려 잘됐어'라는 긍정적 사고를 넘어선 초긍정적 사고의 흐름"]
         mainLabel.text = wordDict[searchTextField.text!] ?? "검색 결과가 없습니다"
         mainLabel.textAlignment = .center
         mainLabel.font = .systemFont(ofSize: 20)
+        mainLabel.numberOfLines = 0
+        
+        // 검색 버튼 누르면 랜덤으로 단어 나타나게 함
+        words.shuffle()
+        wordButton1.setTitle(words[0], for: .normal)
+        wordButton2.setTitle(words[1], for: .normal)
+        wordButton3.setTitle(words[2], for: .normal)
+        wordButton4.setTitle(words[3], for: .normal)
     }
-    
-    
-    
     
 }
