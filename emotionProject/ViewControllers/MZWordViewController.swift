@@ -72,7 +72,7 @@ class MZWordViewController: UIViewController {
     }
     
     /* Return 버튼 눌러도 검색되도록 하는 기능
-    ❓ return 버튼 누르면 키보드 사라지게 하는 방법
+    ❓ return 버튼 누르면 키보드 사라지게 하는 방법 : 함수 추가했는데도 동작 안 함
      해결 방법 - stackoverflow 검색 https://stackoverflow.com/questions/26288124/how-do-i-get-the-return-key-to-perform-the-same-action-as-a-button-press-in-swif
      */
     
